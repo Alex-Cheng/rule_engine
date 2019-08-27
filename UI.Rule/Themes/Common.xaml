@@ -1,0 +1,160 @@
+<ResourceDictionary x:Uid="ResourceDictionary_1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:shadow="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+                    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+                    xmlns:sapm="clr-namespace:System.Activities.Presentation.Model;assembly=System.Activities.Presentation"
+                    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+                    xmlns:conv="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation" >
+
+    <conv:ArgumentToExpressionConverter x:Uid="conv:ArgumentToExpressionConverter_1" x:Key="expressionConverter"/>
+
+    <BooleanToVisibilityConverter x:Uid="BooleanToVisibilityConverter_1" x:Key="booleanToVisibilityConverter" />
+
+    <Style x:Uid="Style_1" x:Key="HighlightTextBorderStyle" TargetType="{x:Type Border}">
+        <Setter x:Uid="Setter_1" Property="Background" Value="Yellow" />
+        <Setter x:Uid="Setter_2" Property="BorderThickness" Value="1"/>
+        <Setter x:Uid="Setter_3" Property="BorderBrush" Value="Black"/>
+        <Setter x:Uid="Setter_4" Property="CornerRadius" Value="3"/>
+        <Setter x:Uid="Setter_5" Property="Margin" Value="1, 1, 1, 1" />
+        <Setter x:Uid="Setter_6" Property="Padding" Value="1, 1, 1, 1" />
+    </Style>
+
+
+    <Style x:Uid="Style_2" TargetType="{x:Type ContentControl}">
+        <Setter x:Uid="Setter_7" Property="VerticalAlignment" Value="Top"/>
+    </Style>
+
+    <Style x:Uid="Style_3" x:Key="StackItemsControl" TargetType="{x:Type ItemsControl}">
+        <Setter x:Uid="Setter_8" Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate x:Uid="ItemsPanelTemplate_1">
+                    <StackPanel x:Uid="StackPanel_1" Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Uid="Style_4" x:Key="PopupBorderStyle" TargetType="{x:Type Border}">
+        <Setter x:Uid="Setter_9" Property="BorderBrush" Value="Black"/>
+        <Setter x:Uid="Setter_10" Property="BorderThickness" Value="1"/>
+        <Setter x:Uid="Setter_11" Property="Padding" Value="5"/>
+        <Setter x:Uid="Setter_12" Property="CornerRadius" Value="5"/>
+        <Setter x:Uid="Setter_13" Property="Background" Value="White"/>
+    </Style>
+
+    <ControlTemplate x:Uid="ControlTemplate_1" x:Key="RemoveButton" TargetType="{x:Type Button}">
+        <Image x:Uid="Image_1" Source="/Autodesk.IM.UI.Rule;component/Images/remove.ico" Height="16" Width="16"></Image>
+    </ControlTemplate>
+
+    <ControlTemplate x:Uid="ControlTemplate_2" x:Key="ContentWithBorder" TargetType="{x:Type ContentControl}">
+        <shadow:SystemDropShadowChrome x:Uid="shadow:SystemDropShadowChrome_1" Color="#71000000" Margin="0,0,5,5" CornerRadius="5">
+            <Border x:Uid="Border_1" Style="{StaticResource PopupBorderStyle}">
+                <ScrollViewer x:Uid="ScrollViewer_1" HorizontalScrollBarVisibility="Hidden"
+                      VerticalScrollBarVisibility="Auto"
+                      MaxHeight="300">
+                    <ContentPresenter x:Uid="ContentPresenter_1" />
+                </ScrollViewer>
+            </Border>
+        </shadow:SystemDropShadowChrome>
+    </ControlTemplate>
+
+    <Style x:Uid="Style_5" x:Key="PopupContentStyle" TargetType="{x:Type ContentControl}">
+        <Setter x:Uid="Setter_14" Property="Template" Value="{StaticResource ContentWithBorder}"/>
+        <Setter x:Uid="Setter_15" Property="FocusManager.IsFocusScope" Value="True"/>
+    </Style>
+
+    <Style x:Uid="Style_6" x:Key="PopupStyle" TargetType="{x:Type Popup}">
+        <Setter x:Uid="Setter_16" Property="AllowsTransparency" Value="True"/>
+        <Setter x:Uid="Setter_17" Property="Placement" Value="Bottom"/>
+        <Setter x:Uid="Setter_18" Property="StaysOpen" Value="False"/>
+        <Setter x:Uid="Setter_19" Property="Control.FontStyle" Value="Normal"/>
+    </Style>
+
+    <Style x:Uid="Style_7" x:Key="ExpanderGroupStyle" TargetType="{x:Type StackPanel}">
+        <Setter x:Uid="Setter_20" Property="Orientation" Value="Vertical"></Setter>
+        <Setter x:Uid="Setter_21" Property="Margin" Value="5, 2, 0, 2"></Setter>
+    </Style>
+
+    <Style x:Uid="Style_8" x:Key="RuleBorderStyle" TargetType="{x:Type Border}">
+        <Setter x:Uid="Setter_22" Property="BorderBrush" Value="Transparent"/>
+        <Setter x:Uid="Setter_23" Property="BorderThickness" Value="1"/>
+        <Setter x:Uid="Setter_24" Property="Padding" Value="0"/>
+        <Setter x:Uid="Setter_25" Property="CornerRadius" Value="5"/>
+        <Setter x:Uid="Setter_26" Property="Background" Value="Transparent"/>
+    </Style>
+
+    <Style x:Uid="Style_9" x:Key="RuleInternalBorderStyle" TargetType="{x:Type Border}">
+        <Setter x:Uid="Setter_27" Property="BorderBrush" Value="Transparent"/>
+        <Setter x:Uid="Setter_28" Property="BorderThickness" Value="0"/>
+        <Setter x:Uid="Setter_29" Property="Padding" Value="5"/>
+        <Setter x:Uid="Setter_30" Property="CornerRadius" Value="5"/>
+        <Setter x:Uid="Setter_31" Property="Background" Value="White"/>
+        <Setter x:Uid="Setter_32" Property="Margin" Value="10,0,0,0"/>
+    </Style>
+
+    <LinearGradientBrush x:Uid="LinearGradientBrush_1" x:Key="borderContent" StartPoint="0.5,0" EndPoint="0.5,1.0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop x:Uid="GradientStop_1" Color="#FFFEFEFF" Offset="0" />
+            <GradientStop x:Uid="GradientStop_2" Color="#FFCFE0FC" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Uid="LinearGradientBrush_2" x:Key="borderContentFocused" StartPoint="0.5,0" EndPoint="0.5,1.0">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop x:Uid="GradientStop_3" Color="#FFFEFEFF" Offset="0" />
+            <GradientStop x:Uid="GradientStop_4" Color="#FF90A0FC" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Uid="SolidColorBrush_1" Color="#FFCEDFF5" x:Key="borderLine"/>
+    <SolidColorBrush x:Uid="SolidColorBrush_2" Color="#FF8090F5" x:Key="borderLineFocused"/>
+
+    <Style x:Uid="Style_10" x:Key="PlainStaticActivityBorderStyle" TargetType="{x:Type Border}">
+        <Setter x:Uid="Setter_33" Property="BorderBrush" Value="{StaticResource borderLine}"/>
+        <Setter x:Uid="Setter_34" Property="BorderThickness" Value="1"/>
+        <Setter x:Uid="Setter_35" Property="Padding" Value="5"/>
+        <Setter x:Uid="Setter_36" Property="Margin" Value="0"/>
+        <Setter x:Uid="Setter_37" Property="CornerRadius" Value="5"/>
+        <Setter x:Uid="Setter_38" Property="Background" Value="Transparent"/>
+    </Style>
+
+    <ControlTemplate x:Uid="ControlTemplate_3" x:Key="RuleBorder" TargetType="{x:Type ContentControl}">
+        <Border x:Uid="mRuleBorder" Style="{StaticResource RuleBorderStyle}" Name="mRuleBorder">
+            <Border x:Uid="mRuleInternalBorder" Style="{StaticResource RuleInternalBorderStyle}" Name="mRuleInternalBorder">
+                <ContentPresenter x:Uid="ContentPresenter_2" VerticalAlignment="Center" Margin="0,4,0,0" Focusable="True"/>
+            </Border>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger x:Uid="Trigger_1" Property="IsMouseOver" Value="True">
+                <Setter x:Uid="Setter_39" TargetName="mRuleBorder" Property="BorderBrush" Value="{StaticResource borderLine}"/>
+                <Setter x:Uid="Setter_40" TargetName="mRuleBorder" Property="Background" Value="{StaticResource borderContent}"/>
+                <Setter x:Uid="Setter_41" TargetName="mRuleInternalBorder" Property="BorderBrush" Value="{StaticResource borderLine}"/>
+            </Trigger>
+            <DataTrigger x:Uid="DataTrigger_1" Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type sap:ActivityDesigner}},Path=IsFocused}" Value="True">
+                <Setter x:Uid="Setter_42" TargetName="mRuleBorder" Property="BorderBrush" Value="{StaticResource borderLineFocused}"/>
+                <Setter x:Uid="Setter_43" TargetName="mRuleBorder" Property="Background" Value="{StaticResource borderContentFocused}"/>
+                <Setter x:Uid="Setter_44" TargetName="mRuleInternalBorder" Property="BorderBrush" Value="{StaticResource borderLineFocused}"/>
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Uid="ControlTemplate_4" x:Key="ExpressionBorder" TargetType="{x:Type ContentControl}">
+        <Border x:Uid="Border_2" Margin="1,0,1,0" BorderThickness="0" BorderBrush="Black">
+            <ContentPresenter x:Uid="ContentPresenter_3"/>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Uid="ControlTemplate_5" x:Key="ImageButton" TargetType="{x:Type Button}">
+        <ContentPresenter x:Uid="ContentPresenter_4" VerticalAlignment="Center"/>
+    </ControlTemplate>
+
+    <Button x:Uid="Button_1" x:Key="CollapseButton" Command="sapv:DesignerView.CollapseCommand"
+                                    Template="{StaticResource ImageButton}">
+        <Image x:Uid="Image_2" Source="/Autodesk.IM.UI.Rule;component/Images/expanded.ico" Height="12"/>
+    </Button>
+
+    <Button x:Uid="Button_2" x:Key="ExpandButton" Command="sapv:DesignerView.ExpandInPlaceCommand"
+                                Template="{StaticResource ImageButton}">
+        <Image x:Uid="Image_3" Source="/Autodesk.IM.UI.Rule;component/Images/collapsed.ico" Height="12"/>
+    </Button>
+</ResourceDictionary>

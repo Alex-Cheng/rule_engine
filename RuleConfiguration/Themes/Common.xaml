@@ -1,0 +1,83 @@
+<ResourceDictionary x:Uid="ResourceDictionary_1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:shadow="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+                    xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+                    xmlns:sapm="clr-namespace:System.Activities.Presentation.Model;assembly=System.Activities.Presentation"
+                    xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+                    xmlns:conv="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+                    xmlns:au="http://www.autodesk.com/utilitydesign/common"
+                    xmlns:auur="clr-namespace:RuleConfiguration"
+                    xmlns:aiur="clr-namespace:Autodesk.IM.UI.Rule;assembly=Autodesk.IM.UI.Rule">
+
+    <ResourceDictionary.MergedDictionaries>        
+        <!--<ResourceDictionary x:Uid="ResourceDictionary_2" Source="/Autodesk.UtilityDesign.UI.Controls;Component/Themes/Common.xaml" /> -->
+        <ResourceDictionary x:Uid="ResourceDictionary_3" Source="/Autodesk.Gis.UI.VisualLibrary;Component/AllStyles.xaml"/>
+        <ResourceDictionary x:Uid="ResourceDictionary_4" Source="/Autodesk.IM.UI.Rule;Component/Themes/Common.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <auur:ArgumentToIsLiteralBoolConverter x:Uid="auur:ArgumentToIsLiteralBoolConverter_1" x:Key="literalConverter"/>
+
+    <auur:ArgumentToIsActivityBoolConverter x:Uid="auur:ArgumentToIsActivityBoolConverter_1" x:Key="activityConverter"/>
+
+    <auur:NotConverter x:Uid="auur:NotConverter_1" x:Key="notConverter" />
+
+    <Style x:Uid="Style_1" x:Key="ResultTypeIcon" TargetType="{x:Type Image}">
+        <Style.Triggers>
+            <DataTrigger x:Uid="DataTrigger_1" Binding="{Binding Path=Type}" Value="{x:Static auur:ValidationType.Warning}">
+                <Setter x:Uid="Setter_1" Property="Source" Value="{StaticResource displayErrors}" />
+            </DataTrigger>
+            <DataTrigger x:Uid="DataTrigger_2" Binding="{Binding Path=Type}" Value="{x:Static auur:ValidationType.Error}">
+                <Setter x:Uid="Setter_2" Property="Source" Value="{StaticResource validationError}" />
+            </DataTrigger>
+        </Style.Triggers>
+        <Setter x:Uid="Setter_3" Property="Stretch" Value="UniformToFill"/>
+        <Setter x:Uid="Setter_4" Property="Height" Value="16"/>
+        <Setter x:Uid="Setter_5" Property="Width" Value="16"/>
+    </Style>
+
+    <Style x:Uid="Style_2" x:Key="ResetableOnlyExpressionItemStyle" TargetType="{x:Type auur:ExpressionItemPresenter}">
+        <Setter x:Uid="Setter_6" Property="aiur:ItemSelector.Removable" Value="false"/>
+        <Setter x:Uid="Setter_7" Property="aiur:ItemSelector.Resetable" Value="true"/>
+    </Style>
+
+    <Style x:Uid="Style_3" x:Key="ExpandableActivityDesignerStyle" TargetType="{x:Type auur:RuleActivityDesigner}">
+        <Setter x:Uid="Setter_8" Property="Template" Value="{DynamicResource Collapsed}"/>
+        <Setter x:Uid="Setter_9" Property="ContextMenu">
+            <Setter.Value>
+                <ContextMenu x:Uid="ContextMenu_1" Style="{DynamicResource ContextMenuStyle}">
+                    <MenuItem x:Uid="MenuItem_1" Header="Collapse" Command="sapv:DesignerView.CollapseCommand"></MenuItem>
+                    <MenuItem x:Uid="MenuItem_2" Header="Expand in Place" Command="sapv:DesignerView.ExpandInPlaceCommand"></MenuItem>
+                </ContextMenu>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger x:Uid="Trigger_1" Property="ShowExpanded" Value="True">
+                <Setter x:Uid="Setter_10" Property="Template" Value="{DynamicResource Expanded}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <ControlTemplate x:Uid="ControlTemplate_1" x:Key="NoUnitTemplate">
+        <ContentControl x:Uid="ContentControl_1" Template="{StaticResource ExpressionBorder}">
+            <StackPanel x:Uid="StackPanel_1" Orientation="Horizontal">
+                <auur:ValueSelector
+                            x:Uid="auur:ValueSelector_1" Text="{Binding ElementName=_this, Path=DisplayText}"/>
+            </StackPanel>
+        </ContentControl>
+    </ControlTemplate>
+
+    <ControlTemplate x:Uid="ControlTemplate_2" x:Key="UnitTemplate">
+        <ContentControl x:Uid="ContentControl_2" Template="{StaticResource ExpressionBorder}">
+            <StackPanel x:Uid="StackPanel_2" Orientation="Horizontal">
+                <auur:ValueSelector
+                            x:Uid="auur:ValueSelector_2" Text="{Binding ElementName=_this, Path=DisplayText}"/>
+                <!--<auur:UnitSelector
+                            x:Uid="auur:UnitSelector_1" ItemName="Unit"
+                            OwnerItem="{Binding Path=ModelItem}"
+                            UnitType="{Binding ElementName=_this, Path=UnitType}"
+                            DefaultUnit="{Binding ElementName=_this, Path=DefaultUnit}"/>-->
+                <TextBlock x:Uid="TextBlock_1" Text="]"/>
+            </StackPanel>
+        </ContentControl>
+    </ControlTemplate>
+</ResourceDictionary>

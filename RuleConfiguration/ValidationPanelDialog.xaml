@@ -1,0 +1,21 @@
+<Window x:Uid="Window_1" x:Class="RuleConfiguration.ValidationPanelDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rule="clr-namespace:RuleConfiguration"
+        Title="Validation Panel"
+        Width="240"
+        Height="500"
+        MinWidth="280"
+        MinHeight="300"
+        SnapsToDevicePixels="True"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        TextOptions.TextFormattingMode="Display"
+        Background="#FFF0F0F0"
+        xml:lang="en-US">
+    
+    <Grid x:Uid="Grid_1">
+        <rule:DesignValidationPanel />
+    </Grid>
+
+</Window>

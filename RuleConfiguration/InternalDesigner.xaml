@@ -1,0 +1,90 @@
+<UserControl x:Uid="mInternalDesigner" x:Class="RuleConfiguration.InternalDesigner"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+             xmlns:au_cc="clr-namespace:Autodesk.Gis.UI.VisualLibrary.CustomControls;assembly=Autodesk.Gis.UI.VisualLibrary"
+             mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300" Name="mInternalDesigner">
+    <UserControl.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Common.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Uid="Style_1" x:Key="IconStyle" TargetType="{x:Type Image}">
+                <Setter x:Uid="Setter_1" Property="Height" Value="16"/>
+                <Setter x:Uid="Setter_2" Property="Width" Value="16"/>
+            </Style>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding x:Uid="CommandBinding_1" Command="Delete"
+                        PreviewCanExecute="PreviewDelete_CanExecute"/>
+        <CommandBinding x:Uid="CommandBinding_2" Command="sapv:DesignerView.CutCommand"
+                        PreviewCanExecute="PreviewCut_CanExecute"/>
+        <CommandBinding x:Uid="CommandBinding_3" Command="sapv:DesignerView.CopyCommand"
+                        PreviewCanExecute="PreviewCopy_CanExecute"/>
+        <CommandBinding x:Uid="CommandBinding_4" Command="sapv:DesignerView.ExpandCommand"
+                        PreviewCanExecute="PreviewNotExecute"/>
+        <CommandBinding x:Uid="CommandBinding_5" Command="sapv:DesignerView.GoToParentCommand"
+                        PreviewCanExecute="PreviewNotExecute"/>
+    </UserControl.CommandBindings>
+
+    <DockPanel x:Uid="DockPanel_1" LastChildFill="True" VerticalAlignment="Stretch">
+        <ToolBar x:Uid="ToolBar_1" DockPanel.Dock="Top">
+            <Button x:Uid="mUndoBtn" Command="sapv:DesignerView.UndoCommand"
+                ToolTip="Undo"
+                ToolTipService.ShowOnDisabled ="True"
+                x:Name="mUndoBtn">
+                <Image x:Uid="Image_1" Source="Images/undo.ico" Style="{StaticResource IconStyle}"/>
+            </Button>
+            <Button x:Uid="mRedoBtn" Command="sapv:DesignerView.RedoCommand"
+                ToolTip="Redo"
+                ToolTipService.ShowOnDisabled ="True"
+                x:Name="mRedoBtn">
+                <Image x:Uid="Image_2" Source="Images/redo.ico" Style="{StaticResource IconStyle}"/>
+            </Button>
+            <Button x:Uid="mCutBtn" Command="sapv:DesignerView.CutCommand"
+                ToolTip="Cut"
+                ToolTipService.ShowOnDisabled ="True"
+                x:Name="mCutBtn">
+                <Image x:Uid="Image_3" Source="Images/cut.ico" Style="{StaticResource IconStyle}"/>
+            </Button>
+            <Button x:Uid="mCopyBtn" Command="sapv:DesignerView.CopyCommand"
+                ToolTip="Copy"
+                ToolTipService.ShowOnDisabled ="True"
+                x:Name="mCopyBtn">
+                <Image x:Uid="Image_4" Source="Images/copy.ico" Style="{StaticResource IconStyle}"/>
+            </Button>
+            <Button x:Uid="mPasteBtn" Command="sapv:DesignerView.PasteCommand"
+                ToolTip="Paste"
+                ToolTipService.ShowOnDisabled ="True"
+                x:Name="mPasteBtn">
+                <Image x:Uid="Image_5" Source="Images/paste.ico" Style="{StaticResource IconStyle}"/>
+            </Button>
+            <Button x:Uid="mDeleteBtn" x:Name="mDeleteBtn" Command="Delete"
+                ToolTip="Delete"
+                ToolTipService.ShowOnDisabled ="True">
+                <Image x:Uid="Image_6" Source="Images/delete.ico" Style="{StaticResource IconStyle}"/>
+            </Button>
+            <Separator x:Uid="Separator_1"/>
+            <au_cc:SearchBox x:Uid="mSearchBox" Name="mSearchBox" Width="120" PromptText="Search" TextChanged="SearchBox_TextChanged" PreviewKeyDown="SearchBox_PreviewKeyDown"/>
+            <Button x:Uid="mFindPreviousBtn" x:Name="mFindPreviousBtn" Command="{Binding ElementName=mInternalDesigner, Path=FindPreviousCommand}"
+                ToolTip="Find Previous"
+                ToolTipService.ShowOnDisabled ="True">
+                <Image x:Uid="Image_7" Source="Images/search_up.ico" Style="{StaticResource IconStyle}"/>
+            </Button>
+            <Button x:Uid="mFindNextBtn" x:Name="mFindNextBtn" Command="{Binding ElementName=mInternalDesigner, Path=FindNextCommand}"
+                ToolTip="Find Next"
+                ToolTipService.ShowOnDisabled ="True">
+                <Image x:Uid="Image_8" Source="Images/search_down.ico" Style="{StaticResource IconStyle}"/>
+            </Button>
+        </ToolBar>
+        <ContentControl x:Uid="mContentControl" x:Name="mContentControl"
+                PreviewMouseDoubleClick="content_PreviewMouseDoubleClick"
+                PreviewDragEnter="content_PreviewDragEnter"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch" />
+    </DockPanel>
+</UserControl>

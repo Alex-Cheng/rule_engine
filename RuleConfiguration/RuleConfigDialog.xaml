@@ -1,0 +1,72 @@
+<Window x:Uid="Window_1" x:Class="RuleConfiguration.RuleConfigDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:auur="clr-namespace:RuleConfiguration"
+        xmlns:au_cc="clr-namespace:Autodesk.Gis.UI.VisualLibrary.CustomControls;assembly=Autodesk.Gis.UI.VisualLibrary"
+        Title="Rule Configuration"
+        Width="1024"
+        Height="768"
+        MinWidth="800"
+        MinHeight="600"
+        SnapsToDevicePixels="True"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        TextOptions.TextFormattingMode="Display"
+        Background="#FFF0F0F0"
+        xml:lang="en-US">
+    
+    <Grid x:Uid="Grid_1">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_3" Height="*"/>
+            <RowDefinition x:Uid="RowDefinition_4" Height="35"/>
+        </Grid.RowDefinitions>
+
+        <ContentControl x:Uid="mDesignerViewContent" Name="mDesignerViewContent" Grid.Row="0"  VerticalAlignment="Stretch" Margin="8">
+            <ContentControl.Resources>
+                <ResourceDictionary x:Uid="ResourceDictionary_3">
+                    <DataTemplate x:Uid="DataTemplate_2" DataType="{x:Type auur:OperationContext}">
+                        <TextBlock x:Uid="TextBlock_5" TextWrapping="Wrap">
+                    <Hyperlink x:Uid="Hyperlink_1" Command="{Binding Command}">
+                        <TextBlock x:Uid="TextBlock_6" Text="{Binding DisplayName}" TextWrapping="Wrap"/>
+                    </Hyperlink>
+                </TextBlock>
+                    </DataTemplate>
+                </ResourceDictionary>
+            </ContentControl.Resources>
+        </ContentControl>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+        <Button x:Uid="mOKBtn" x:Name="mOKBtn"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="2"
+                Width="75"
+                Height="25"
+                Content="_OK"
+                IsDefault="True"
+                ToolTipService.ShowOnDisabled ="True"
+                Click="OkButton_Click"/>
+
+        <Button x:Uid="mCancelBtn" x:Name="mCancelBtn"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="2"
+                Width="75"
+                Height="25"
+                Content="_Cancel"
+                IsCancel="True"
+                ToolTipService.ShowOnDisabled ="True"/>
+
+        <Button x:Uid="mApplyBtn" x:Name="mApplyBtn"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Bottom"
+                Margin="2"
+                Width="75"
+                Height="25"
+                Content="_Apply"
+                ToolTipService.ShowOnDisabled ="True"
+                Command="{Binding ApplyCommand}" />
+    </StackPanel>
+    </Grid>
+
+</Window>

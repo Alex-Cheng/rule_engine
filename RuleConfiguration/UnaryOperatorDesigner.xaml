@@ -1,0 +1,34 @@
+<auur:RuleActivityDesigner x:Uid="auur:RuleActivityDesigner_1" x:Class="RuleConfiguration.UnaryOperatorDesigner"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+                           xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+                           xmlns:conv="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+                           xmlns:auur="clr-namespace:RuleConfiguration"
+                           MinWidth="0">
+
+    <auur:RuleActivityDesigner.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Common.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </auur:RuleActivityDesigner.Resources>
+
+    <auur:RuleActivityDesigner.Template>
+        <ControlTemplate x:Uid="ControlTemplate_1">
+            <ContentControl x:Uid="ContentControl_1" Template="{StaticResource ExpressionBorder}">
+                <StackPanel x:Uid="StackPanel_1" Orientation="Horizontal">
+                    <auur:ValueSelector x:Uid="auur:ValueSelector_1" />
+                    <auur:ExpressionItemPresenter
+                            x:Uid="auur:ExpressionItemPresenter_1" DataContext="{Binding Path=ModelItem}"
+                            Item="{Binding Path=Operand}"
+                            ItemName="Operand"
+                            OwnerItem="{Binding}"
+                            Style="{StaticResource ResetableOnlyExpressionItemStyle}"
+                            />
+                </StackPanel>
+            </ContentControl>
+        </ControlTemplate>
+    </auur:RuleActivityDesigner.Template>
+</auur:RuleActivityDesigner>

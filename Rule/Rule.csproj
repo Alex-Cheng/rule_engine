@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E5A5629D-424B-4196-A04B-65773116AE17}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Autodesk.IM.Rule</RootNamespace>
+    <AssemblyName>Autodesk.IM.Rule</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>$(EXEDIR)\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(EXEDIR)\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activities\ConditionalValue.cs" />
+    <Compile Include="Activities\ConditionalValueFactory.cs" />
+    <Compile Include="Activities\DynamicIf.cs" />
+    <Compile Include="Activities\DynamicLiteral.cs" />
+    <Compile Include="Activities\DynamicOperator.cs" />
+    <Compile Include="Activities\DynamicOperators.cs" />
+    <Compile Include="Activities\Expression.cs" />
+    <Compile Include="Activities\InvokeNamedRule.cs" />
+    <Compile Include="Activities\Match.cs" />
+    <Compile Include="Activities\MatchBase.cs" />
+    <Compile Include="Activities\MatchCase.cs" />
+    <Compile Include="Activities\MatchOperator.cs" />
+    <Compile Include="Activities\MatchWithResult.cs" />
+    <Compile Include="Activities\MathFunctionActivityWithOneArg.cs" />
+    <Compile Include="Activities\MathFunctionActivityWithTwoArgs.cs" />
+    <Compile Include="Activities\MathFunctions.cs" />
+    <Compile Include="Activities\NamedRuleFunction.cs" />
+    <Compile Include="Activities\StringExpression.cs" />
+    <Compile Include="Activities\StringLiteral.cs" />
+    <Compile Include="ActivityCaptionResourceAttribute.cs" />
+    <Compile Include="ActivityEntry.cs" />
+    <Compile Include="ActivitySignature.cs" />
+    <Compile Include="DynamicValue.cs" />
+    <Compile Include="DynamicValueConvert.cs" />
+    <Compile Include="FunctionEntry.cs" />
+    <Compile Include="ActivitySerializer.cs" />
+    <Compile Include="IExpressionItem.cs" />
+    <Compile Include="IExpressionItemProvider.cs" />
+    <Compile Include="InvokedRuleEventArgs.cs" />
+    <Compile Include="InvokingRuleEventArgs.cs" />
+    <Compile Include="IResetableActivity.cs" />
+    <Compile Include="IRule.cs" />
+    <Compile Include="IRuleLibrary.cs" />
+    <Compile Include="IRuleSignatureExtension.cs" />
+    <Compile Include="NamedRule.cs" />
+    <Compile Include="NamedRuleExpressionItem.cs" />
+    <Compile Include="NamedRuleExpressionItemProvider.cs" />
+    <Compile Include="OperatorEntry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RuleActivityManager.cs" />
+    <Compile Include="RuleArgument.cs" />
+    <Compile Include="RuleBase.cs" />
+    <Compile Include="RuleConstants.cs" />
+    <Compile Include="RuleException.cs" />
+    <Compile Include="RuleExecutingContext.cs" />
+    <Compile Include="RuleLibrary.cs" />
+    <Compile Include="RuleLogger.cs" />
+    <Compile Include="RulePathHelper.cs" />
+    <Compile Include="RulePoint.cs" />
+    <Compile Include="RuleManager.cs" />
+    <Compile Include="RuleSignature.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

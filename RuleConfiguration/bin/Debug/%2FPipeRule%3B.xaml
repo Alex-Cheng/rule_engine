@@ -1,0 +1,60 @@
+<Activity x:Class="Rule" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:au="http://www.autodesk.com/utilitydesign/common" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:r="clr-namespace:RuleConfiguration;assembly=RuleConfiguration" xmlns:rule="http://www.autodesk.com/utilitydesign/rule" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<x:Members>
+		<x:Property Name="Pipe" Type="InArgument(x:Object)" />
+		<x:Property Name="ValidationResult" Type="InArgument(r:ValidationRuleResult)" />
+	</x:Members>
+	<Sequence mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+		<rule:If>
+			<rule:If.Condition>
+				<InArgument x:TypeArguments="au:DynamicValue">
+					<rule:Equal>
+						<rule:Equal.Left>
+							<InArgument x:TypeArguments="au:DynamicValue">
+								<r:PipePropertyActivity PropertyName="Material" />
+							</InArgument>
+						</rule:Equal.Left>
+						<rule:Equal.Right>
+							<InArgument x:TypeArguments="au:DynamicValue">
+								<rule:DynamicLiteral x:TypeArguments="x:String" Value="A" />
+							</InArgument>
+						</rule:Equal.Right>
+					</rule:Equal>
+				</InArgument>
+			</rule:If.Condition>
+			<rule:If.Then>
+				<Sequence>
+					<r:AddValidationItem Pipe="[Pipe]" Results="[ValidationResult]" Type="Error">
+						<r:AddValidationItem.Message>
+							<InArgument x:TypeArguments="x:String">
+								<rule:StringExpression>
+									<rule:StringExpression.Elements>
+										<InArgument x:TypeArguments="x:String">
+											<rule:StringLiteral Uid="e60a2439-65e4-4b56-a89b-c0b802f71356" Value="Hi Steven." />
+										</InArgument>
+									</rule:StringExpression.Elements>
+								</rule:StringExpression>
+							</InArgument>
+						</r:AddValidationItem.Message>
+					</r:AddValidationItem>
+				</Sequence>
+			</rule:If.Then>
+			<rule:If.Else>
+				<Sequence>
+					<r:AddValidationItem Pipe="[Pipe]" Results="[ValidationResult]" Type="Error">
+						<r:AddValidationItem.Message>
+							<InArgument x:TypeArguments="x:String">
+								<rule:StringExpression>
+									<rule:StringExpression.Elements>
+										<InArgument x:TypeArguments="x:String">
+											<rule:StringLiteral Uid="5bc1b11a-6ffc-4948-893d-07a642ca8a75" Value="Hello, world." />
+										</InArgument>
+									</rule:StringExpression.Elements>
+								</rule:StringExpression>
+							</InArgument>
+						</r:AddValidationItem.Message>
+					</r:AddValidationItem>
+				</Sequence>
+			</rule:If.Else>
+		</rule:If>
+	</Sequence>
+</Activity>

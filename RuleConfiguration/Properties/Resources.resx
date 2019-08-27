@@ -1,0 +1,323 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Warning" xml:space="preserve">
+    <value>Notice</value>
+  </data>
+  <data name="AddRule" xml:space="preserve">
+    <value>&lt;Add Rule...&gt;</value>
+  </data>
+  <data name="CatalogMaterialModelNameItem" xml:space="preserve">
+    <value>Name of catalog material model...</value>
+  </data>
+  <data name="Equal" xml:space="preserve">
+    <value>equals</value>
+  </data>
+  <data name="FeatureAttributeSelectContext" xml:space="preserve">
+    <value>Feature Attributes</value>
+  </data>
+  <data name="FeatureClassSelectContext" xml:space="preserve">
+    <value>Feature Classes</value>
+  </data>
+  <data name="FunctionSelectContext" xml:space="preserve">
+    <value>Functions</value>
+  </data>
+  <data name="GreaterThan" xml:space="preserve">
+    <value>is more than</value>
+  </data>
+  <data name="GreaterThanOrEqual" xml:space="preserve">
+    <value>is at least</value>
+  </data>
+  <data name="LessThan" xml:space="preserve">
+    <value>is less than</value>
+  </data>
+  <data name="LessThanOrEqual" xml:space="preserve">
+    <value>is at most</value>
+  </data>
+  <data name="LiteralNumericValidateError" xml:space="preserve">
+    <value>The input "{0}" can't be converted to numeric value.</value>
+  </data>
+  <data name="OperatorSelectContext" xml:space="preserve">
+    <value>Operators</value>
+  </data>
+  <data name="ActivitySelectContext" xml:space="preserve">
+    <value>Rules</value>
+  </data>
+  <data name="ValidationTypeSelectContext" xml:space="preserve">
+    <value>Validation Types</value>
+  </data>
+  <data name="PreClosingPrompt" xml:space="preserve">
+    <value>Do you want to save changes?</value>
+  </data>
+  <data name="ValidValueSelectContext" xml:space="preserve">
+    <value>Valid Values</value>
+  </data>
+  <data name="CatalogSelectContext" xml:space="preserve">
+    <value>Catalog</value>
+  </data>
+  <data name="SaveErrorMessage" xml:space="preserve">
+    <value>Cannot save rules. Exception: {0}.</value>
+  </data>
+  <data name="CreateNewSubruleDisplayName" xml:space="preserve">
+    <value>Create Subrule</value>
+  </data>
+  <data name="CreateNewSubruleFailed" xml:space="preserve">
+    <value>Cannot create new subrule.</value>
+  </data>
+  <data name="ResolveExceptionMessage" xml:space="preserve">
+    <value>An error occured when resolving errors. </value>
+  </data>
+  <data name="NamedRuleSelectContext" xml:space="preserve">
+    <value>Subrules</value>
+  </data>
+  <data name="RuleValidation" xml:space="preserve">
+    <value>Rule Validation</value>
+  </data>
+  <data name="MaterialListGeneration" xml:space="preserve">
+    <value>Material List Generation</value>
+  </data>
+  <data name="DuplicateNameExists" xml:space="preserve">
+    <value>The name '{0}' is duplicate.</value>
+  </data>
+  <data name="NotEqual" xml:space="preserve">
+    <value>is not equal to</value>
+  </data>
+  <data name="DeleteNamedRuleDisplayName" xml:space="preserve">
+    <value>Delete Subrule</value>
+  </data>
+  <data name="DeleteRulePointDisplayName" xml:space="preserve">
+    <value>Delete Rule</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Alert</value>
+  </data>
+  <data name="FailedToDelete" xml:space="preserve">
+    <value>Failed to delete rule in rule point '{0}'.</value>
+  </data>
+  <data name="FailedToCreateRule" xml:space="preserve">
+    <value>Failed to create rule. Exception: {0}</value>
+  </data>
+  <data name="CreateRuleContentDisplayName" xml:space="preserve">
+    <value>Create Rule</value>
+  </data>
+  <data name="NameCannotBeEmpty" xml:space="preserve">
+    <value>The name cannot be empty.</value>
+  </data>
+  <data name="UnitSelectContext" xml:space="preserve">
+    <value>Units</value>
+  </data>
+  <data name="CopyAsXaml" xml:space="preserve">
+    <value>Copy as XAML</value>
+  </data>
+  <data name="CopyNamedRuleDisplayName" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="CutNamedRuleDisplayName" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="PasteNamedRuleDisplayName" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="CopyRulePointDisplayName" xml:space="preserve">
+    <value>Copy as Subrule</value>
+  </data>
+  <data name="DefaultNewSubruleName" xml:space="preserve">
+    <value>Subrule</value>
+  </data>
+  <data name="RuleNameContainsIllegalChar" xml:space="preserve">
+    <value>The name '{0}' contains illegal character.</value>
+  </data>
+  <data name="ConvertToLastValidValue" xml:space="preserve">
+    <value>Convert to last valid value.</value>
+  </data>
+  <data name="NoFeatureAttribute" xml:space="preserve">
+    <value>&lt;No Feature Attribute&gt;</value>
+  </data>
+  <data name="FeatureClassDetailSelectContextName" xml:space="preserve">
+    <value>Details for {0}</value>
+    <comment>Details for specific feature class.</comment>
+  </data>
+  <data name="GenericDetailSelectContextName" xml:space="preserve">
+    <value>Generic Details</value>
+    <comment>Details for general purpose. Can be used for each feature class.</comment>
+  </data>
+  <data name="CannotOpenClipboard" xml:space="preserve">
+    <value>Cannot open clipboard.</value>
+  </data>
+  <data name="ModelAttributeSelectContext" xml:space="preserve">
+    <value>Model Attributes</value>
+  </data>
+  <data name="WritableAttributeSelectContext" xml:space="preserve">
+    <value>Writable Feature Attributes</value>
+  </data>
+  <data name="EnumerableAttributeSelectContext" xml:space="preserve">
+    <value>{0} Attributes</value>
+  </data>
+  <data name="DelimiterTypeSelectorContext" xml:space="preserve">
+    <value>Delimiter Types</value>
+  </data>
+  <data name="RuleStyle" xml:space="preserve">
+    <value>Style</value>
+  </data>
+  <data name="TableAttributeSelectContext" xml:space="preserve">
+    <value>Table Attributes</value>
+  </data>
+  <data name="TableSelectContext" xml:space="preserve">
+    <value>Table Name</value>
+  </data>
+  <data name="StyleSymbolSelectContext" xml:space="preserve">
+    <value>Style Symbols</value>
+  </data>
+  <data name="StyleSelectContext" xml:space="preserve">
+    <value>Styles</value>
+  </data>
+  <data name="DefaultStyleName" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="ValidationGroupHeader" xml:space="preserve">
+    <value> ( devices: {0}; alerts: {1}; notices: {2} )</value>
+  </data>
+  <data name="ValidationItemHeaderFailure" xml:space="preserve">
+    <value> Alert</value>
+  </data>
+  <data name="ValidationItemHeaderIgnoredMessage" xml:space="preserve">
+    <value> Ignored Message</value>
+  </data>
+  <data name="ValidationItemHeaderIgnoredWarning" xml:space="preserve">
+    <value> Ignored Notice</value>
+  </data>
+  <data name="ValidationItemHeaderMessage" xml:space="preserve">
+    <value> Message</value>
+  </data>
+  <data name="ValidationItemHeaderWarning" xml:space="preserve">
+    <value> Notice</value>
+  </data>
+  <data name="ClickToBlock" xml:space="preserve">
+    <value>Ignore this item</value>
+  </data>
+  <data name="ClickToUnblock" xml:space="preserve">
+    <value>Do not ignore this item</value>
+  </data>
+  <data name="ClickUncontain" xml:space="preserve">
+    <value>Click to remove from parent container</value>
+  </data>
+  <data name="FilterApplied" xml:space="preserve">
+    <value> (filter applied)</value>
+  </data>
+</root>

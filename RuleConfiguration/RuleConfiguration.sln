@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuleConfiguration", "RuleConfiguration.csproj", "{9B6B3E68-8A85-4B8E-B106-AECA09E842E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Rule", "..\UI.Rule\UI.Rule.csproj", "{4521E1C7-B308-4519-9B27-13AA7BE2C38E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rule", "..\Rule\Rule.csproj", "{E5A5629D-424B-4196-A04B-65773116AE17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B6B3E68-8A85-4B8E-B106-AECA09E842E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6B3E68-8A85-4B8E-B106-AECA09E842E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6B3E68-8A85-4B8E-B106-AECA09E842E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6B3E68-8A85-4B8E-B106-AECA09E842E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4521E1C7-B308-4519-9B27-13AA7BE2C38E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4521E1C7-B308-4519-9B27-13AA7BE2C38E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4521E1C7-B308-4519-9B27-13AA7BE2C38E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4521E1C7-B308-4519-9B27-13AA7BE2C38E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5A5629D-424B-4196-A04B-65773116AE17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5A5629D-424B-4196-A04B-65773116AE17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5A5629D-424B-4196-A04B-65773116AE17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5A5629D-424B-4196-A04B-65773116AE17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

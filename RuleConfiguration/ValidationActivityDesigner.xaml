@@ -1,0 +1,41 @@
+<auur:RuleActivityDesigner x:Uid="auur:RuleActivityDesigner_1" x:Class="RuleConfiguration.ValidationActivityDesigner"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                           xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+                           xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+                           xmlns:conv="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+                           xmlns:auur="clr-namespace:RuleConfiguration"
+                           HorizontalAlignment="Left"
+                           Collapsible="False">
+
+    <auur:RuleActivityDesigner.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Uid="ResourceDictionary_2" Source="Themes/Common.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <sys:String x:Uid="sys:String_1" x:Key="XLS_Report">Report</sys:String>
+        </ResourceDictionary>
+    </auur:RuleActivityDesigner.Resources>
+
+    <auur:RuleActivityDesigner.Template>
+        <ControlTemplate x:Uid="ControlTemplate_1">
+            <ContentControl x:Uid="ContentControl_1" Content="{Binding Path=Content}"></ContentControl>
+        </ControlTemplate>
+    </auur:RuleActivityDesigner.Template>
+
+    <ContentControl x:Uid="ContentControl_2" Template="{StaticResource RuleBorder}" DataContext="{Binding ModelItem}">
+        <StackPanel x:Uid="StackPanel_1" Orientation="Horizontal">
+            <auur:ActivitySelector x:Uid="auur:ActivitySelector_1" Item="{Binding Path=.}" Text="{StaticResource XLS_Report}" />
+
+            <TextBlock x:Uid="TextBlock_1">Error  "</TextBlock>
+            <auur:ExpressionItemPresenter
+                x:Uid="auur:ExpressionItemPresenter_1" MinWidth="10"
+                ItemName="Message"
+                OwnerItem="{Binding Path=.}"
+                Item="{Binding Path=Message, Mode=TwoWay}"/>
+            <TextBlock x:Uid="TextBlock_2">"</TextBlock>
+        </StackPanel>
+    </ContentControl>
+
+</auur:RuleActivityDesigner>

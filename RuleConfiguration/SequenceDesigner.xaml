@@ -1,0 +1,60 @@
+<auur:RuleActivityDesigner x:Uid="auur:RuleActivityDesigner_1" x:Class="RuleConfiguration.SequenceDesigner"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+                           xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+                           xmlns:aiur="clr-namespace:Autodesk.IM.UI.Rule;assembly=Autodesk.IM.UI.Rule"
+                           xmlns:auur="clr-namespace:RuleConfiguration"
+                           HorizontalAlignment="Stretch"
+                           ExpandState="True"
+                           PinState="True">
+
+    <auur:RuleActivityDesigner.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Common.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </auur:RuleActivityDesigner.Resources>
+
+    <auur:RuleActivityDesigner.Template>
+        <ControlTemplate x:Uid="ControlTemplate_1">
+            <sap:WorkflowItemsPresenter x:Uid="sap:WorkflowItemsPresenter_1" Items="{Binding Path=ModelItem.Activities}"
+                                        aiur:ItemSelector.ItemName="Activities" aiur:ItemSelector.OwnerItem="{Binding Path=ModelItem}">
+                <sap:WorkflowItemsPresenter.SpacerTemplate>
+                    <DataTemplate x:Uid="DataTemplate_1">
+                        <ContentControl x:Uid="ContentControl_1">
+                            <ContentControl.Template>
+                                <ControlTemplate x:Uid="ControlTemplate_2">
+                                    <StackPanel x:Uid="mSpacerPanel" Orientation="Vertical" Background="White" Name="mSpacerPanel">
+                                        <auur:ActivitySelector x:Uid="mSpacerSelector" ItemName="Activities"
+                                                            OwnerItem="{Binding Path=ModelItem}"
+                                                            Visibility="Hidden"
+                                                            x:Name="mSpacerSelector"/>
+                                    </StackPanel>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger x:Uid="Trigger_1" Property="IsMouseOver" Value="True">
+                                            <Setter x:Uid="Setter_1" TargetName="mSpacerSelector" Property="Visibility" Value="Visible"/>
+                                        </Trigger>
+                                        <DataTrigger x:Uid="DataTrigger_1" Binding="{Binding Path=ModelItem.Activities.Count}" Value="0">
+                                            <Setter x:Uid="Setter_2" TargetName="mSpacerSelector" Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                        <Trigger x:Uid="Trigger_2" Property="IsFocused" Value="True">
+                                            <Setter x:Uid="Setter_3" TargetName="mSpacerPanel" Property="Background" Value="AliceBlue"></Setter>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </ContentControl.Template>
+                        </ContentControl>
+                    </DataTemplate>
+                </sap:WorkflowItemsPresenter.SpacerTemplate>
+                <sap:WorkflowItemsPresenter.ItemsPanel>
+                    <ItemsPanelTemplate x:Uid="ItemsPanelTemplate_1">
+                        <StackPanel x:Uid="StackPanel_1"/>
+                    </ItemsPanelTemplate>
+                </sap:WorkflowItemsPresenter.ItemsPanel>
+            </sap:WorkflowItemsPresenter>
+        </ControlTemplate>
+    </auur:RuleActivityDesigner.Template>
+
+</auur:RuleActivityDesigner>

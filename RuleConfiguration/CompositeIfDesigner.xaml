@@ -1,0 +1,67 @@
+<auur:RuleActivityDesigner x:Uid="auur:RuleActivityDesigner_1" x:Class="RuleConfiguration.CompositeIfDesigner"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                           xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+                           xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+                           xmlns:conv="clr-namespace:System.Activities.Presentation.Converters;assembly=System.Activities.Presentation"
+                           xmlns:auur="clr-namespace:RuleConfiguration"
+                           HorizontalAlignment="Left"
+                           Style="{DynamicResource ExpandableActivityDesignerStyle}"
+                           Collapsible="True">
+
+    <auur:RuleActivityDesigner.CommandBindings>
+        <CommandBinding x:Uid="CommandBinding_1" Command="sapv:DesignerView.CollapseCommand"
+                        CanExecute="CommandCollapse_CanExecute"/>
+        <CommandBinding x:Uid="CommandBinding_2" Command="sapv:DesignerView.ExpandInPlaceCommand"
+                        CanExecute="CommandExpandInPlace_CanExecute" />
+    </auur:RuleActivityDesigner.CommandBindings>
+
+    <auur:RuleActivityDesigner.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Uid="ResourceDictionary_2" Source="Themes/Common.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            
+            <sys:String x:Uid="sys:String_1" x:Key="XLS_If">If</sys:String>
+            <sys:String x:Uid="sys:String_2" x:Key="XLS_Then">Then</sys:String>
+            <sys:String x:Uid="sys:String_3" x:Key="XLS_Else">Else</sys:String>
+
+            <ControlTemplate x:Uid="ControlTemplate_1" x:Key="Expanded">
+                <ContentControl x:Uid="ContentControl_1" Template="{StaticResource RuleBorder}">
+                    <StackPanel x:Uid="StackPanel_1">
+                        <DockPanel x:Uid="DockPanel_1">
+                            <StackPanel x:Uid="StackPanel_2" Orientation="Horizontal" DockPanel.Dock="Left">
+                                <auur:ActivitySelector x:Uid="auur:ActivitySelector_1" Item="{Binding Path=ModelItem}" Text="{StaticResource XLS_If}" />
+                                <auur:ExpressionItemPresenter x:Uid="auur:ExpressionItemPresenter_1" DataContext="{Binding Path=ModelItem}" Item="{Binding Path=Condition}"
+                                           ItemName="Condition" OwnerItem="{Binding}" />
+                            </StackPanel>
+                            <ContentControl x:Uid="ContentControl_2" Content="{StaticResource CollapseButton}" />
+                        </DockPanel>
+                        <TextBlock x:Uid="TextBlock_1" Text="{StaticResource XLS_Then}" TextWrapping="Wrap" />
+                        <sap:WorkflowItemPresenter x:Uid="sap:WorkflowItemPresenter_1" Item="{Binding Path=ModelItem.Then, Mode=TwoWay}"
+                                       HintText="Condition Expression"/>
+                        <TextBlock x:Uid="TextBlock_2" Text="{StaticResource XLS_Else}" TextWrapping="Wrap" />
+                        <sap:WorkflowItemPresenter x:Uid="sap:WorkflowItemPresenter_2" Item="{Binding Path=ModelItem.Else, Mode=TwoWay}"
+                                       HintText="Condition Expression"/>
+                    </StackPanel>
+                </ContentControl>
+            </ControlTemplate>
+
+            <ControlTemplate x:Uid="ControlTemplate_2" x:Key="Collapsed">
+                <ContentControl x:Uid="ContentControl_3" Template="{StaticResource RuleBorder}">
+                    <DockPanel x:Uid="DockPanel_2">
+                        <StackPanel x:Uid="StackPanel_3" Orientation="Horizontal" DockPanel.Dock="Left">
+                            <auur:ActivitySelector x:Uid="auur:ActivitySelector_2" Item="{Binding Path=ModelItem}" Text="{StaticResource XLS_If}" />
+                            <auur:ExpressionItemPresenter x:Uid="auur:ExpressionItemPresenter_2" DataContext="{Binding Path=ModelItem}" Item="{Binding Path=Condition}"
+                                           ItemName="Condition" OwnerItem="{Binding}" />
+                        </StackPanel>
+                        <ContentControl x:Uid="ContentControl_4" Content="{StaticResource ExpandButton}" />
+                    </DockPanel>
+
+                </ContentControl>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </auur:RuleActivityDesigner.Resources>
+
+</auur:RuleActivityDesigner>

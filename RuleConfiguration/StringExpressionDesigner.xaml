@@ -1,0 +1,78 @@
+<auur:RuleActivityDesigner x:Uid="mStringExpressionDesigner" x:Class="RuleConfiguration.StringExpressionDesigner"
+                           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                           xmlns:sap="clr-namespace:System.Activities.Presentation;assembly=System.Activities.Presentation"
+                           xmlns:sapv="clr-namespace:System.Activities.Presentation.View;assembly=System.Activities.Presentation"
+                           xmlns:aiur="clr-namespace:Autodesk.IM.UI.Rule;assembly=Autodesk.IM.UI.Rule"
+                           xmlns:auur="clr-namespace:RuleConfiguration"
+                           HorizontalAlignment="Left"
+                           MinWidth="0"
+                           x:Name="mStringExpressionDesigner">
+
+    <auur:RuleActivityDesigner.Resources>
+        <ResourceDictionary x:Uid="ResourceDictionary_1">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/Common.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Uid="Style_1" x:Key="stringExpression" TargetType="{x:Type auur:ExpressionItemPresenter}">
+                <Setter x:Uid="Setter_1" Property="aiur:ItemSelector.Removable" Value="true"/>
+                <Setter x:Uid="Setter_2" Property="aiur:ItemSelector.Resetable" Value="false"/>
+            </Style>
+        </ResourceDictionary>
+
+    </auur:RuleActivityDesigner.Resources>
+
+    <auur:RuleActivityDesigner.Template>
+        <ControlTemplate x:Uid="ControlTemplate_1">
+            <StackPanel x:Uid="StackPanel_1" Orientation="Horizontal">
+                <!-- the purpose of setting MinWidth to 10 is to fix an issue when Message is empty.
+                        When Message is empty, below control's width will be empty that causes you cannot "mouse over"
+                        on it, then the hyperlink "<Add Text...>" will never display.
+                -->
+                <ItemsControl x:Uid="ItemsControl_1" ItemsSource="{Binding Mode=TwoWay, Path=ModelItem.Elements}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate x:Uid="ItemsPanelTemplate_1">
+                            <StackPanel x:Uid="StackPanel_2" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:Uid="DataTemplate_1">
+                            <auur:ExpressionItemPresenter
+                                x:Uid="auur:ExpressionItemPresenter_1" Item="{Binding Path=.}"
+                                ItemName="Elements"
+                                OwnerItem="{Binding ElementName=mStringExpressionDesigner, Path=ModelItem}"
+                                Style="{StaticResource stringExpression}">
+                            </auur:ExpressionItemPresenter>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+                <auur:ValueSelector x:Uid="mAddTextControl" Item="{x:Null}"
+                                    ItemName="Elements"
+                                    OwnerItem="{Binding Path=ModelItem}"
+                                    x:Name="mAddTextControl">
+                    <auur:ValueSelector.Style>
+                        <Style x:Uid="Style_2" TargetType="{x:Type auur:ValueSelector}">
+                            <Setter x:Uid="Setter_3" Property="EmptyText" Value="&lt;Add Text...&gt;"/>
+                            <Setter x:Uid="Setter_4" Property="Visibility" Value="Collapsed"/>
+                            <Setter x:Uid="Setter_5" Property="Resetable" Value="False"/>
+                            <Setter x:Uid="Setter_6" Property="Removable" Value="False"/>
+                            <Style.Triggers>
+                                <DataTrigger x:Uid="DataTrigger_1" Binding="{Binding Path=ModelItem.Elements.Count}" Value="0">
+                                    <Setter x:Uid="Setter_7" Property="FontStyle" Value="Italic"/>
+                                    <Setter x:Uid="Setter_8" Property="Visibility" Value="Visible"/>
+                                    <Setter x:Uid="Setter_9" Property="EmptyText" Value="&lt;Edit String Expression...&gt;"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </auur:ValueSelector.Style>
+                </auur:ValueSelector>
+            </StackPanel>
+            <ControlTemplate.Triggers>
+                <Trigger x:Uid="Trigger_1" Property="IsMouseOver" Value="True">
+                    <Setter x:Uid="Setter_10" TargetName="mAddTextControl" Property="Visibility" Value="Visible"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </auur:RuleActivityDesigner.Template>
+
+</auur:RuleActivityDesigner>
